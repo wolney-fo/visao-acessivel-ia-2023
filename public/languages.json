@@ -1,0 +1,40 @@
+{
+    "languages": [
+        {
+            "language": "Portuguese",
+            "code": "pt-BR"
+        },
+        {
+            "language": "English",
+            "code": "en-GB"
+        },
+        {
+            "language": "German",
+            "code": "de-DE"
+        },
+        {
+            "language": "Spanish",
+            "code": "en-ES"
+        },
+        {
+            "language": "French",
+            "code": "fr-FR"
+        },
+        {
+            "language": "Italian",
+            "code": "it-IT"
+        },
+        {
+            "language": "Japanese",
+            "code": "jp-JP"
+        },
+        {
+            "language": "Korean",
+            "code": "ko-KO"
+        },
+        {
+            "language": "Mandarin",
+            "code": "zh-CN"
+        }
+    ]
+}
