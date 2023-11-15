@@ -23,18 +23,6 @@
         {
             "language": "Italian",
             "code": "it-IT"
-        },
-        {
-            "language": "Japanese",
-            "code": "jp-JP"
-        },
-        {
-            "language": "Korean",
-            "code": "ko-KO"
-        },
-        {
-            "language": "Mandarin",
-            "code": "zh-CN"
         }
     ]
 }

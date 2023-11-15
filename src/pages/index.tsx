@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
+const { v4: uuidv4 } = require("uuid");
+import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 
 // UI
 import { Inter } from "next/font/google";
 import { AiOutlineSound } from "react-icons/ai";
 import { Language } from "@/config/interfaces";
+import { AZURE_RESOURCES_API_REGION, AZURE_TEXT_TO_SPEECH_API_KEY, AZURE_TEXT_TO_SPEECH_API_SYNTHESIS_VOICE_NAME } from "@/config/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +33,35 @@ export default function Home() {
       (language) => language.code === languageCode
     );
     setUserLanguage(languageObject || null);
+  };
+
+  const playTranscription = () => {
+    if (userInput) {
+      const speechConfig = sdk.SpeechConfig.fromSubscription(
+        AZURE_TEXT_TO_SPEECH_API_KEY || "",
+        AZURE_RESOURCES_API_REGION || ""
+      );
+      const speechSynthesizer = new sdk.SpeechSynthesizer(
+        speechConfig,
+        undefined
+      );
+
+      const ssml = `<speak version="1.0" xmlns="https://www.w3.org/2001/10/synthesis" xml:lang="en-US"><voice name="${AZURE_TEXT_TO_SPEECH_API_SYNTHESIS_VOICE_NAME}"><lang xml:lang="${userLanguage?.code}">${userInput}</lang></voice></speak>`;
+      speechSynthesizer.speakSsmlAsync(
+        ssml,
+        (result) => {
+          if (result.errorDetails) {
+            console.error(result.errorDetails);
+          }
+
+          speechSynthesizer.close();
+        },
+        (error) => {
+          console.log(error);
+          speechSynthesizer.close();
+        }
+      );
+    }
   };
 
   return (
@@ -58,7 +91,7 @@ export default function Home() {
             onChange={(e) => setUserInput(e.target.value)}
             rows={12}
           ></textarea>
-          <button className="text-xl py-6 px-12 flex mx-auto bg-[#4b619c] mb-24 rounded-lg">
+          <button className="text-xl py-6 px-12 flex mx-auto bg-[#4b619c] mb-24 rounded-lg" onClick={playTranscription}>
             <AiOutlineSound />
           </button>
           <h2 className="text-2xl mb-6">Descrição de imagens</h2>

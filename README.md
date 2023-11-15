@@ -3,7 +3,7 @@
 Projeto da matéria de inteligência artificial (Unit) de 2023 utilizando recursos de IA da MS Azure. 
 
 ## Features
-- [ ] Conversão de texto em áudio;
+- [x] Conversão de texto em áudio;
 - [ ] Descrição de imagens em áudio.
 
 ## Imagens
