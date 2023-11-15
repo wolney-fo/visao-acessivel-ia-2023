@@ -7,7 +7,7 @@ Projeto da matéria de inteligência artificial (Unit) de 2023 utilizando recurs
 - [ ] Descrição de imagens em áudio.
 
 ## Imagens
-*Coming soon*
+![Screenshot](/doc/screenshot.jpeg)
 
 ## Stack
 - [Next.js](https://nextjs.org/)
