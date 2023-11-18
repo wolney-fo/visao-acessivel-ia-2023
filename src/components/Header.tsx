@@ -3,10 +3,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="py-8 w-full text-center border-b border-blue-400">
+    <header className="py-8 w-full border-b border-white">
       <Image
         alt="Projeto Visão Acessível"
-        className="mx-auto mb-6"
+        className="ml-12"
         height="72"
         width="330"
         src="/visao-acessivel-logo.png"

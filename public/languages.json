@@ -1,7 +1,7 @@
 {
     "languages": [
         {
-            "language": "Portuguese",
+            "language": "Português",
             "code": "pt-BR"
         },
         {
@@ -9,19 +9,19 @@
             "code": "en-GB"
         },
         {
-            "language": "German",
+            "language": "Deutsch",
             "code": "de-DE"
         },
         {
-            "language": "Spanish",
-            "code": "en-ES"
+            "language": "Español",
+            "code": "es-ES"
         },
         {
-            "language": "French",
+            "language": "Français",
             "code": "fr-FR"
         },
         {
-            "language": "Italian",
+            "language": "Italiano",
             "code": "it-IT"
         }
     ]
